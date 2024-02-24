@@ -9,6 +9,8 @@ import AdminRoute from "./components/AdminRoute.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProfilePage from "./screens/ProfilePage.jsx";
+import MapScreen from "./screens/MapScreen.jsx";
+import Locations from "./screens/Locations.jsx";
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Route>
+          <Route path="/map" element={<MapScreen />} />
+          <Route path="/locations" element={<Locations />} />
         </Routes>
       </Router>
     </>
