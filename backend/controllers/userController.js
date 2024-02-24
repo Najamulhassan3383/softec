@@ -19,6 +19,7 @@ const authUser = asyncHandler(async (req, res) => {
       email: user.email,
       isAdmin: user.isAdmin,
       avatar: user.avatar,
+      trips: user.trips,
     });
   } else {
     res.status(401);
@@ -32,7 +33,7 @@ const authUser = asyncHandler(async (req, res) => {
 const registerUser = asyncHandler(async (req, res) => {
   console.log("registerUser");
   console.log(req.body);
-  const { name, email, password, isAdmin } = req.body;
+  const { name, email, password } = req.body;
 
   const userExists = await User.findOne({ email });
 
@@ -60,6 +61,7 @@ const registerUser = asyncHandler(async (req, res) => {
       email: user.email,
       isAdmin: user.isAdmin,
       avatar: user.avatar,
+      trips: user.trips,
     });
   } else {
     res.status(400);
