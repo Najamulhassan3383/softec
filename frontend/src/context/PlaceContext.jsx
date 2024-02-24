@@ -7,7 +7,7 @@ const places = [
     district: "Khyber Pakhtunkhwa",
     latitude: 34.8141186,
     longitude: 73.67642783,
-    image: "https://picsum.photos/400",
+    image: "https://picsum.photos/900",
   },
   {
     _key: "Astola Island",
@@ -16,7 +16,7 @@ const places = [
     district: "Balochistan",
     latitude: 25.1223206,
     longitude: 63.84794782,
-    image: "https://picsum.photos/400",
+    image: "https://picsum.photos/900",
   },
   {
     _key: "Attabad Lake",
@@ -25,7 +25,7 @@ const places = [
     district: "Gilgit−Baltistan",
     latitude: 36.3458274,
     longitude: 74.86543579,
-    image: "https://picsum.photos/400",
+    image: "https://picsum.photos/900",
   },
   {
     _key: "Baltoro Glacier",
@@ -34,7 +34,7 @@ const places = [
     district: "Gilgit−Baltistan",
     latitude: 35.7106418,
     longitude: 76.55314235,
-    image: "https://picsum.photos/400",
+    image: "https://picsum.photos/900",
   },
   {
     _key: "Bhurban",

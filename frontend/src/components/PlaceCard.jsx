@@ -2,9 +2,15 @@
 import useConfig from "antd/es/config-provider/hooks/useConfig";
 import { PlaceContext } from "../context/PlaceContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PlaceCard = () => {
   const { placesState } = useContext(PlaceContext);
+  const navigate = useNavigate();
+
+  const hanldeClick = (item) => {
+    navigate(`/locationDetail`, { state: item });
+  };
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 xl:px-20 py-8">
@@ -38,6 +44,7 @@ const PlaceCard = () => {
                   <button
                     className="bg-blue-700 text-white font-bold px-3 py-1 rounded mr-2"
                     type="button"
+                    onClick={() => hanldeClick(item)}
                   >
                     View
                   </button>
