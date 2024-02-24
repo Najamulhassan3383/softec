@@ -11,7 +11,7 @@ const user = {
 };
 const navigation = [
   { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
+  { name: "Gallery", href: "#", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
   { name: "Reports", href: "#", current: false },
@@ -206,6 +206,7 @@ export default function Dashboard() {
         <main>
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             {/* Your content */}
+            {/* <Gallery /> */}
           </div>
         </main>
       </div>
