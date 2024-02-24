@@ -1,5 +1,7 @@
 import Search from "antd/es/input/Search";
-import React, { useState } from "react";
+import { useContext, useState } from "react";
+import { PlaceContext } from "../context/PlaceContext";
+import PlaceCard from "../components/PlaceCard";
 
 const filters = [
   "Historical Places",
@@ -12,6 +14,9 @@ function Locations() {
   const [activeFilter, setActiveFilter] = useState("Historical Places");
 
   const onSearch = (value) => console.log(value);
+  const { placesState, setPlacesState } = useContext(PlaceContext);
+
+  console.log(placesState);
 
   return (
     <div
@@ -45,12 +50,7 @@ function Locations() {
       </div>
       <div className="w-full flex flex-wrap justify-center">
         {/* Replace this with your cards */}
-        <div className="w-64 h-64 bg-white shadow-md m-4 rounded flex items-center justify-center">
-          <span className="text-gray-500">Card Placeholder</span>
-        </div>
-        <div className="w-64 h-64 bg-white shadow-md m-4 rounded flex items-center justify-center">
-          <span className="text-gray-500">Card Placeholder</span>
-        </div>
+        <PlaceCard />
         {/* End replace */}
       </div>
     </div>
