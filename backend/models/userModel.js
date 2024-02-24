@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema(
   {
@@ -23,10 +22,16 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    avatar: {
-      type: String,
-      default: "https://picsum.photos/150",
-    },
+    image:{
+      public_id:{
+          type:String,
+          required:true
+      },
+      url:{
+          type:String,
+          required:true
+      }
+  },
     trips: [
       {
         type: mongoose.Schema.Types.ObjectId,

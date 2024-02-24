@@ -1,13 +1,18 @@
 import asyncHandler from "../middleware/asyncHandler.js";
 import generateToken from "../utils/generateToken.js";
 import User from "../models/userModel.js";
+import cloudinary from "cloudinary";
 
 // @desc    Auth user & get token
 // @route   POST /api/users/auth
 // @access  Public
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-
+  const mycloud=await cloudinary.v2.uploader.upload(req.body.image,{
+    folder:'avatars',
+    width:150,
+    crop:'scale'
+})
   const user = await User.findOne({ email });
 
   if (user && (await user.matchPassword(password))) {
@@ -18,7 +23,10 @@ const authUser = asyncHandler(async (req, res) => {
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
-      avatar: user.avatar,
+      image:{
+        public_id:mycloud.public_id,
+        url:mycloud.secure_url
+    } 
     });
   } else {
     res.status(401);
