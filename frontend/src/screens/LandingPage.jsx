@@ -1,8 +1,6 @@
 import HeaderLandingPage from "../components/HeaderLandingPage";
 
-
 export default function LandingPage() {
- 
   return (
     <div className="bg-white overflow-hidden">
       <HeaderLandingPage />
