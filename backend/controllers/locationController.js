@@ -1,11 +1,13 @@
-import asyncHandler from "../middleware/asyncHandler.js";
-
+import asyncHandler from "express-async-handler"; // Update import statement
 import Location from "../models/locationModel.js";
 
 // Create Location
 export const createLocation = asyncHandler(async (req, res) => {
   const location = new Location(req.body);
   try {
+    if (req.file) {
+      location.image = req.file.path; // Assuming req.file.path contains the path of the uploaded image
+    }
     await location.save();
     res.status(201).send(location);
   } catch (error) {
