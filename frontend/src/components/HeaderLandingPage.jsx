@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "/FeaturesPage" },
-
+  { name: "Gallery", href: "/locations" },
   { name: "About Us", href: "/AboutUs" },
 ];
 export default function HeaderLandingPage() {
@@ -40,19 +39,20 @@ export default function HeaderLandingPage() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
+                to = {item.href}
+                className="text-sm font-semibold leading-6 text-gray-900 "
+                
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               to="/LoginPage"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-semibold leading-6 text-gray-900 style-none hover:text-gray-900"
             >
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>

@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 dotenv.config();
+import fileupload from "express-fileupload";
+import cloudinary from "cloudinary";
 import connectDB from "./config/db.js";
 // import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
@@ -12,6 +14,11 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 const port = process.env.PORT || 5000;
 
 connectDB();
+cloudinary.config({ 
+  cloud_name: 'dvgwyn2jv', 
+  api_key: '279643717662695', 
+  api_secret: 'qYplFk9zuadWVnrWE_xUDN-T104' 
+});
 
 const app = express();
 const corsOptions = {
