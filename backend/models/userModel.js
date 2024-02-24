@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
+import mongoose from "mongoose";
+
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -24,8 +26,13 @@ const userSchema = mongoose.Schema(
     avatar: {
       type: String,
       default: "https://picsum.photos/150",
-      required: false,
     },
+    trips: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Trip",
+      },
+    ],
   },
   {
     timestamps: true,
