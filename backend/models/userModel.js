@@ -21,11 +21,22 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    avatar: {
-      type: String,
-      default: "https://picsum.photos/150",
-      required: false,
-    },
+    image:{
+      public_id:{
+          type:String,
+          required:true
+      },
+      url:{
+          type:String,
+          required:true
+      }
+  },
+    trips: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Trip",
+      },
+    ],
   },
   {
     timestamps: true,
