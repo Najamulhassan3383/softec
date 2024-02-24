@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Search from "antd/es/input/Search";
-import { Button, Modal  , Calendar, theme} from "antd";
-// import Calendar from "./Calender";
+import { Button, Modal, Calendar, theme } from "antd";
 import DropdownForLocation from "./DropdownForLocation";
 import { set } from "mongoose";
 const Data = [
@@ -15,16 +14,14 @@ const Data = [
   "faraz",
 ];
 
-
-
 const CreateTripModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tripName, setTripName] = useState("");
   const [collaborators, setCollaborators] = useState([]);
-  const [date , setDate] = useState("")
+  const [date, setDate] = useState("");
 
   const onPanelChange = (value) => {
-    setDate(value.format('YYYY-MM-DD'));
+    setDate(value.format("YYYY-MM-DD"));
   };
 
   const showModal = () => {
@@ -42,7 +39,7 @@ const CreateTripModal = () => {
 
   const { token } = theme.useToken();
   const wrapperStyle = {
-    width: '100%',
+    width: "100%",
     border: `1px solid ${token.colorBorderSecondary}`,
     borderRadius: token.borderRadiusLG,
   };
@@ -90,7 +87,6 @@ const CreateTripModal = () => {
         <h1 className="text-2xl font-bold tracking-tight text-gray-700 mb-2">
           Trip Date
         </h1>
-        {/* <Calendar /> */}
         <div style={wrapperStyle}>
           <Calendar fullscreen={false} onChange={onPanelChange} />
         </div>
